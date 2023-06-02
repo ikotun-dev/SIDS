@@ -56,7 +56,7 @@
   
         try {
           // Send a POST request to the API endpoint
-          const response = await fetch("http://localhost:80/techspot/login.php", {
+          const response = await fetch("https://fbkrs-chathub.up.railway.app/api/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -64,16 +64,9 @@
             body: JSON.stringify(loginData)
           });
   
-          const data = await response.json();
-         console.log(data)
-  
-        //   if (data.message === "User does not exist in the database.") {
-        //     this.loginstatus = "Login Failed";
-        //   } else if (data.message === "User exists in the database.") {
-        //     this.loginstatus = "Login Success!";
-        //   } else {
-        //     this.loginstatus = null;
-        //   }
+          //const data = await response.json();
+         console.log(response.message)
+
         } catch (error) {
           console.error(error);
           this.loginstatus = "An error occurred during login.";
