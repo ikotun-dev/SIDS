@@ -26,7 +26,8 @@
             <input
               class="px-2 py-2 h-8 lg:w-64 rounded-sm sm:w-32 focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-2"
               type="text"
-              placeholder="username : "
+              placeholder="username :"
+              v-model="username"
             />
           </div>
 
@@ -37,6 +38,7 @@
               class="px-2 py-2 h-8 w-40 ounded-sm focus:outline-none text-xs focus:ring-10 font-pop border-0"
               :type="inputType"
               placeholder="password : "
+              v-model="password"
             />
             <i
               class="mt-2 mr-2 text-blue-800"
@@ -47,6 +49,7 @@
 
           <button
             class="font-roboto border py-1 px-16 text-sm rounded-sm bg-blue-800 text-white mt-4 hover:bg-blue-950 rounded-e-full rounded-s-full"
+            @click="sumbmitForm"
           >
             Login
           </button>
@@ -65,6 +68,7 @@
 import HeaderTop from "./HeaderTop";
 import SecondHeader from "./SecondHeader";
 import ManPage from "./ManPage";
+import axios from 'axios'
 
 export default {
   name: "App",
@@ -79,6 +83,9 @@ export default {
       DontShowPassword: "fas fa-eye-slasg",
       inputType: "password",
       showLogin: "false",
+      username : "",
+      password : "",
+
     };
   }, //data
   methods: {
@@ -90,8 +97,20 @@ export default {
 
     showLoginForm(){
         this.showLogin = !this.showLogin;
-    }//showLogin 
+    },//showLogin 
 
+    async sumbmitForm() {
+        const res = axios.post('http://127.0.0.1:8000/login/', {
+            user_name : this.username,
+            password : this.password
+        })//res
+        if (res.status == 200){
+            console.log("login was successful")
+            this.$router.push('/login')
+        }//if 
+        
+
+    }//submitForm 
   },
 };
 </script>
