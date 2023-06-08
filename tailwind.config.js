@@ -5,6 +5,11 @@ module.exports = {
     extend: {
       animation: {
         'spin-slow': 'spin 3s linear infinite',
+      },
+      fontFamily: {
+        'pop' : ['Poppins', 'sans-serif'],
+        'pop-bold' : ['Poppins', 'sans-serif', '300']
+
       }
     },
   },

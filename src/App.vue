@@ -1,11 +1,23 @@
 <template>
-<RouterView></RouterView>
-</template>
+    <div>
+      <header>
+        <nav>
 
-<script>
-
-</script>
-
-<style>
-
-</style>
+        </nav>
+      </header>
+      <main>
+        <router-view></router-view>
+      </main>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    // ...
+  };
+  </script>
+  
+  <style>
+  /* Add any additional styles here */
+  </style>
+  

@@ -6,6 +6,7 @@
             <li class="flex mr-4">
                 <i class="fas fa-user mx-1 text-sm"></i>
                 <h4 class="text-xs">account</h4>
+                  
             </li>
             <li class="flex">
                 <i class="fas fa-shop mx-1 text-sm"></i>
@@ -17,3 +18,23 @@
 
    
 </template>
+<script>
+export default{
+    components : {
+     
+    },
+    data() {
+        return {
+            account: false
+        };
+    },
+    methods : {
+        showAccount(){
+            this.account = !this.account
+        }
+
+    }
+}
+
+
+</script>

@@ -8,10 +8,12 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import Frontpage from './components/Frontpage'
 //import SecondHeader from './components/SecondHeader'
 import LoginPage from './components/LoginPage'
+import overLay from './components/overLay'
 
 const routes = [
     { path: "/", component: Frontpage},
-    { path: "/login", component: LoginPage}
+    { path: "/login", component: LoginPage},
+    { path : "/overlay", component: overLay}
 ]
 const router = createRouter({
     history: createWebHistory(),

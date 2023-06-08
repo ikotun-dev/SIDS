@@ -51,7 +51,7 @@ export default {
     async submitForm() {
       // Create an object with the login data
       const loginData = {
-        name: this.username,
+        name: this.name,
         age: this.age,
       };
 
@@ -65,6 +65,7 @@ export default {
           body: new URLSearchParams(loginData),
         });
 
+        console.log(loginData)
         const data = await response.json();
         console.log(data);
 
