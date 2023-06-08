@@ -1,7 +1,7 @@
 <template>
 <div class="relative">
     <!-- Main content of the page -->
-    <div class="bg-gray-200 py-8">
+    <div class="lg:bg-gray-200 lg:py-8 sm:hidden">
       <!-- Your page content goes here -->
       <HeaderTop></HeaderTop>
       <SecondHeader></SecondHeader>
@@ -13,12 +13,25 @@
       <div class="bg-white p-8 rounded shadow">
         <!-- Overlay content goes here -->
         <div class="flex flex-col px-4 py-4 items-center">
+        
             <label class="items-center font-pop-100 font-extrabold"> Login </label>
-            <input class="px-2 py-2 h-8 w-64 rounded-sm focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-2 " type="text" placeholder="username : ">
-            <input class="px-2 py-2 h-8 w-64 rounded-sm focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-3 " :type="showPassword ? 'text' : 'password' " placeholder="password : ">
+            <div>
+                <input class="px-2 py-2 h-8 lg:w-64 rounded-sm sm:w-32 focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-2 " type="text" placeholder="username : ">
+            </div>
+         
+
+            <div class="flex justify-between text-base mt-4 border rounded-sm focus:ring-blue-950 ring-blue-800 ring-1 lg:w-64  sm:w-32 ">
+            <input class="px-2 py-2 h-8 w-40 ounded-sm focus:outline-none text-xs focus:ring-10 font-pop border-0 " :type="inputType" placeholder="password : ">
+            <i  class="mt-2 mr-2 text-blue-800 " :class="showPassword" @click="togglePasswordVisibility"></i>
+            </div>
+
+            <button class="font-roboto border py-1 px-16 text-sm rounded-sm bg-blue-800 text-white mt-4 hover:bg-blue-950 rounded-e-full rounded-s-full ">Login</button>
+
+            <a><h3 class="font-pop-100 text-gray-600 text-xs mt-2 ">Forgot password?</h3></a>
         </div>
 
       </div>
+
     </div>
 
 
@@ -39,12 +52,15 @@ export default {
   },
   data() {
     return {
-        showPassword: false
+        showPassword: 'fas fa-eye',
+        DontShowPassword: 'fas fa-eye-slasg',
+        inputType: 'password',
     };
   },//data 
   methods : {
     togglePasswordVisibility() {
-        this.showPassword = !this.showPassword
+        this.inputType = this.inputType === "password" ? "text" : "password";
+        this.showPassword = this.showPassword == "fas fa-eye" ? "fas fa-eye-slash" : "fas fa-eye"
 
     }//tooglePasswordVisibility
 
