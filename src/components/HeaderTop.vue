@@ -5,7 +5,7 @@
         <ul class="flex">
             <li class="flex mr-4">
                 <i class="fas fa-user mx-1 text-sm"></i>
-                <h4 class="text-xs">account</h4>
+                <h4 class="text-xs" @click="$emit('show-login')" >account</h4>
                   
             </li>
             <li class="flex">
