@@ -15,7 +15,7 @@
         <div class="flex flex-col px-4 py-4 items-center">
             <label class="items-center font-pop-100 font-extrabold"> Login </label>
             <input class="px-2 py-2 h-8 w-64 rounded-sm focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-2 " type="text" placeholder="username : ">
-            <input class="px-2 py-2 h-8 w-64 rounded-sm focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-2 " type="password" placeholder="password : ">
+            <input class="px-2 py-2 h-8 w-64 rounded-sm focus:outline-none text-xs focus:ring-10 font-pop focus:ring-blue-950 ring-1 ring-blue-800 mt-3 " :type="showPassword ? 'text' : 'password' " placeholder="password : ">
         </div>
 
       </div>
@@ -41,12 +41,12 @@ export default {
     return {
         showPassword: false
     };
-  },
+  },//data 
   methods : {
     togglePasswordVisibility() {
         this.showPassword = !this.showPassword
 
-    }
+    }//tooglePasswordVisibility
 
   }
 }
