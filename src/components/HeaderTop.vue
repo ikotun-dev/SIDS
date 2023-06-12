@@ -25,7 +25,8 @@ export default{
     },
     data() {
         return {
-            account: false
+            account: false,
+        
         };
     },
     methods : {

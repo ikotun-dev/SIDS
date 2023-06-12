@@ -100,7 +100,7 @@ export default {
     },//showLogin 
 
     async sumbmitForm() {
-        const res = axios.post('http://127.0.0.1:8000/login/', {
+        const res = await axios.post('http://127.0.0.1:8000/login/', {
             user_name : this.username,
             password : this.password
         })//res
